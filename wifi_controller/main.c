@@ -92,9 +92,9 @@ int main(int argc, char *argv[])
 
 	gps_stream(&gpsdata, WATCH_ENABLE | WATCH_JSON, NULL);
 
-	/* polling interval is once a second */
+	/* polling interval is once every 5 seconds */
 	while (1) {
-		sleep(1);
+		sleep(5);
 
 		/* read as much as we can using gps_read() */
 #if GPSD_API_MAJOR_VERSION >= 7
