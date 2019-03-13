@@ -63,7 +63,7 @@ static void drone_send_data(struct odid_drone_information *drone)
 	printf("set SSID to %s, %d\n", ssid, (int)strlen(ssid));
 
 	system("hostapd_cli DISABLE");
-	snprintf(cmd, sizeof(cmd), "hostapd_cli SET ssid %s", ssid);
+	snprintf(cmd, sizeof(cmd), "hostapd_cli SET ssid \"%s\"", ssid);
 	system(cmd);
 	system("hostapd_cli ENABLE");
 }
